@@ -7,17 +7,13 @@ def read_json(args):
         parameter json file path
         return json data - dictionary
     """
+    read_file = open(args, encoding='utf=8', mode='r')
+    jsonstring = ""
+    for i in read_file.readlines():
+        jsonstring = jsonstring + i
     try:
-        read_file = open(args, encoding='utf=8', mode='r')
-        jsonstring = ""
-        for i in read_file.readlines():
-            jsonstring = jsonstring + i
         data=json.loads(jsonstring)
     except json.decoder.JSONDecodeError:
-        read_file = open(args, encoding='utf=8', mode='r')
-        jsonstring = ""
-        for i in read_file.readlines():
-            jsonstring = jsonstring + i
         if jsonstring[-1] == "\n" and jsonstring[-2] == ",":
             jsonstring = jsonstring[:-2] + "]}"
         data=json.loads(jsonstring)
@@ -30,5 +26,5 @@ def read_json(args):
 
 if __name__ == "__main__":
     data=read_json(sys.argv[1])
-    print(data['rows'][0]['doc']['entities']['hashtags'])
+    print(data['rows'][0]['doc']['entities'])
 
