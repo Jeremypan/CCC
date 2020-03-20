@@ -28,12 +28,13 @@ class ProcessData():
                     elif line.endswith('\n'):
                         line= line.replace(line,line[0:len(line)-1])
                     data=json.loads(line)
-                    self.hashtag.append(data['doc']['entities']['hashtags'])
+                    for hashtag_ele in data['doc']['entities']['hashtags']:
+                        self.hashtag.append(hashtag_ele['text'])
                     self.lang.append(data['doc']['lang'])
                 except json.decoder.JSONDecodeError:
                     return ("Decoder error line: "+line)
         return self.hashtag,self.lang
-        
+
         # jsonstring = ""
         # for i in read_file.readlines():
         #     jsonstring = jsonstring + i
