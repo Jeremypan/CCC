@@ -1,0 +1,72 @@
+<table border="1">
+<tbody><tr><td>Name</td>
+<td>Language code</td>
+</tr><tr><td>English (default)</td>
+<td><span class="code-inline">en</span></td>
+</tr><tr><td>Arabic</td>
+<td><span class="code-inline">ar</span></td>
+</tr><tr><td>Bengali</td>
+<td><span class="code-inline">bn</span></td>
+</tr><tr><td>Czech</td>
+<td><span class="code-inline">cs</span></td>
+</tr><tr><td>Danish</td>
+<td><span class="code-inline">da</span></td>
+</tr><tr><td>German</td>
+<td><span class="code-inline">de</span></td>
+</tr><tr><td>Greek</td>
+<td><span class="code-inline">el</span></td>
+</tr><tr><td>Spanish</td>
+<td><span class="code-inline">es</span></td>
+</tr><tr><td>Persian</td>
+<td><span class="code-inline">fa</span></td>
+</tr><tr><td>Finnish</td>
+<td><span class="code-inline">fi</span></td>
+</tr><tr><td>Filipino</td>
+<td><span class="code-inline">fil</span></td>
+</tr><tr><td>French</td>
+<td><span class="code-inline">fr</span></td>
+</tr><tr><td>Hebrew</td>
+<td><span class="code-inline">he</span></td>
+</tr><tr><td>Hindi</td>
+<td><span class="code-inline">hi</span></td>
+</tr><tr><td>Hungarian</td>
+<td><span class="code-inline">hu</span></td>
+</tr><tr><td>Indonesian</td>
+<td><span class="code-inline">id</span></td>
+</tr><tr><td>Italian</td>
+<td><span class="code-inline">it</span></td>
+</tr><tr><td>Japanese</td>
+<td><span class="code-inline">ja</span></td>
+</tr><tr><td>Korean</td>
+<td><span class="code-inline">ko</span></td>
+</tr><tr><td>Malay</td>
+<td><span class="code-inline">msa</span></td>
+</tr><tr><td>Dutch</td>
+<td><span class="code-inline">nl</span></td>
+</tr><tr><td>Norwegian</td>
+<td><span class="code-inline">no</span></td>
+</tr><tr><td>Polish</td>
+<td><span class="code-inline">pl</span></td>
+</tr><tr><td>Portuguese</td>
+<td><span class="code-inline">pt</span></td>
+</tr><tr><td>Romanian</td>
+<td><span class="code-inline">ro</span></td>
+</tr><tr><td>Russian</td>
+<td><span class="code-inline">ru</span></td>
+</tr><tr><td>Swedish</td>
+<td><span class="code-inline">sv</span></td>
+</tr><tr><td>Thai</td>
+<td><span class="code-inline">th</span></td>
+</tr><tr><td>Turkish</td>
+<td><span class="code-inline">tr</span></td>
+</tr><tr><td>Ukrainian</td>
+<td><span class="code-inline">uk</span></td>
+</tr><tr><td>Urdu</td>
+<td><span class="code-inline">ur</span></td>
+</tr><tr><td>Vietnamese</td>
+<td><span class="code-inline">vi</span></td>
+</tr><tr><td>Chinese (Simplified)</td>
+<td><span class="code-inline">zh-cn</span></td>
+</tr><tr><td>Chinese (Traditional)</td>
+<td><span class="code-inline">zh-tw</span></td>
+</tr></tbody></table>
