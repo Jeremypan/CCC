@@ -2,7 +2,7 @@
 #SBATCH -p physical
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --time=00:05:00
+#SBATCH --time=00:30:00
 #SBATCH --job-name=T1
 #SBATCH -e output/error/job1_error.txt
 #SBATCH -o output/result/job1_result.txt
