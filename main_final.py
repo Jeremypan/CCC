@@ -13,7 +13,7 @@ def seperate_files(file):
        Yield: parts of files
     """
     while True:
-        files = file.readlines(1024*1024*50*4) #Each time read round 1024*1024*100*4=420 MB
+        files = file.readlines(1024*1024*100*4) #Each time read round 1024*1024*100*4=420 MB
         if not files:
             break
         yield files
