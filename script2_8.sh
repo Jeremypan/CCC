@@ -2,6 +2,7 @@
 #SBATCH -p physical
 #SBATCH --nodes=2
 #SBATCH --ntasks=8
+#SBATCH --cpus-per-task=4
 #SBATCH --time=00:30:00
 #SBATCH --job-name=T3
 #SBATCH -e output/error/job3_error.txt
