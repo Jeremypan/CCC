@@ -56,16 +56,23 @@ if size<2:
                 # get hashtage value of dictionary
                 for hashtag in temp['doc']['entities']['hashtags']:
                     total_hashtag_counter.update([hashtag['text'].lower()])
-
                 # get language value of dictionary
-                total_language_counter.update([temp['doc']['lang']])
+                total_language_counter.update([temp['doc']['metadata']['iso_language_code']])
+                if 'retweeted_status' in temp['doc'].keys():
+                    for hashtag in temp['doc']['retweeted_status']['entities']['hashtags']:
+                        total_hashtag_counter.update([hashtag['text'].lower()])
+                    total_language_counter.update([temp['doc']['retweeted_status']['metadata']['iso_language_code']])
             except ValueError:
                 try:
                     temp = json.loads(line[0:len(line) - 2])
                     for hashtag in temp['doc']['entities']['hashtags']:
                         total_hashtag_counter.update([hashtag['text'].lower()])
                     # get language value of dictionary
-                    total_language_counter.update([temp['doc']['lang']])
+                    total_language_counter.update([temp['doc']['metadata']['iso_language_code']])
+                    if 'retweeted_status' in temp['doc'].keys():
+                        for hashtag in temp['doc']['retweeted_status']['entities']['hashtags']:
+                            total_hashtag_counter.update([hashtag['text'].lower()])
+                        total_language_counter.update([temp['doc']['retweeted_status']['metadata']['iso_language_code']])
                 except ValueError:
                     continue
                 # Value Error: check the line with value error (json cannot parse)
@@ -107,14 +114,22 @@ else:
             for hashtag in temp['doc']['entities']['hashtags']:
                 hashtag_counter.update([hashtag['text'].lower()])
             # get language value of dictionary
-            language_counter.update([temp['doc']['lang']])
+            language_counter.update([temp['doc']['metadata']['iso_language_code']])
+            if 'retweeted_status' in temp['doc'].keys():
+                for hashtag in temp['doc']['retweeted_status']['entities']['hashtags']:
+                    hashtag_counter.update([hashtag['text'].lower()])
+                language_counter.update([temp['doc']['retweeted_status']['metadata']['iso_language_code']])
         except ValueError:
             try:
                 temp=json.loads(line[0:len(line)-2])
                 for hashtag in temp['doc']['entities']['hashtags']:
                     hashtag_counter.update([hashtag['text'].lower()])
                 # get language value of dictionary
-                language_counter.update([temp['doc']['lang']])
+                language_counter.update([temp['doc']['metadata']['iso_language_code']])
+                if 'retweeted_status' in temp['doc'].keys():
+                    for hashtag in temp['doc']['retweeted_status']['entities']['hashtags']:
+                        hashtag_counter.update([hashtag['text'].lower()])
+                    language_counter.update([temp['doc']['retweeted_status']['metadata']['iso_language_code']])
             except ValueError:
                 continue
             # Value Error: check the line with value error (json cannot parse)
