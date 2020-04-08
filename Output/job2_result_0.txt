@@ -1,0 +1,34 @@
+Job_2_1_node_8_cores
+------------------------------------
+Rank: 2's time: 69.35568809509277s
+Rank: 3's time: 69.35548877716064s
+Rank: 4's time: 69.35549712181091s
+Rank: 5's time: 69.35548615455627s
+Rank: 6's time: 69.35430216789246s
+Rank: 7's time: 69.35429406166077s
+Rank: 1's time: 69.35568618774414s
+----------------------------Hashtag_Rank---------------------------------
+
+1. #auspol, 33,752
+2. #coronavirus, 16,668
+3. #มาพ่องเพิ่งอะไร, 15,060
+4. #firefightaustralia, 12,875
+5. #oldme, 12,770
+6. #grammys, 9,977
+7. #assange, 9,196
+8. #scottyfrommarketing, 8,331
+9. #sydney, 8,265
+10. #เป๊กผลิตโชค, 8,006
+----------------------------Language_Rank---------------------------------
+
+1. English (default) (en), 4,724,088
+2. undefined (und), 334,730
+3. Thai (th), 258,542
+4. Portuguese (pt), 154,745
+5. Spanish (es), 114,334
+6. Japanese (ja), 72,371
+7. French (fr), 63,287
+8. unknown (tl), 61,978
+9. unknown (in), 55,458
+10. Korean (ko), 32,543
+Rank: 0's time: 69.43322396278381s
