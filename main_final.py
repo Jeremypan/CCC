@@ -4,7 +4,7 @@ import sys, json, io, math, os
 from mpi4py import MPI
 from collections import Counter
 from datetime import datetime
-import re
+# import re
 
 # default encoding utf-8
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
@@ -33,10 +33,10 @@ size = comm.Get_size()
 rank = comm.Get_rank()
 #open file
 read_file = open('tinyTwitter.json', 'rb')
-file_size = os.path.getsize('tinyTwitter.json')
+file_size = os.path.getsize('tinyTwitter.json') # get file zise
 
 
-#
+#the condition - 1 core
 if size < 2:
     total_hashtag_counter = Counter()
     total_language_counter = Counter()
@@ -55,7 +55,9 @@ if size < 2:
             # json load the data in string into dictionary
             try:
                 temp = json.loads(line)
-                # get hashtage value of dictionary
+            # Parse hastag data include tweet and retweet
+            # Parse language through iso_language_code
+            # get hashtage value of dictionary
                 for hashtag in temp['doc']['entities']['hashtags']:
                     total_hashtag_counter.update([hashtag['text'].lower()])
                 # get language value of dictionary
@@ -87,12 +89,13 @@ if size < 2:
                 # print("Rank: {0}, {1}".format(rank,language_list.most_common(10)))
 
 else:
-    buffer_size = math.ceil(file_size / (size)) # size of task
-    offset = buffer_size * rank # start pointer
+    buffer_size = math.ceil(file_size / (size)) # size of each task
+    offset = buffer_size * rank # start pointer for each task
     end_point = buffer_size + offset # end point
-    read_file.seek(offset, 0)
+    read_file.seek(offset, 0) #allocate pointer to the file
     comm.Barrier()  # !!!!important - synchonizaition
-    hashtag_counter = Counter()
+    # initialise the counter
+    hashtag_counter = Counter() 
     language_counter = Counter()
     pointer = read_file.tell()
     while pointer < end_point and pointer < file_size:
@@ -111,6 +114,8 @@ else:
         elif line.endswith("\n"):
             line = line[0:len(line) - 1]
         # json load the data in string into dictionary
+        # Parse hastag data include tweet and retweet
+        # Parse language through iso_language_code
         try:
             temp = json.loads(line)
             # get hashtage value of dictionary
@@ -141,12 +146,11 @@ else:
             # hashtag_counter.update(Counter(list(map(lambda x:x.lower(),hash_tag_list))))
             # # print("Rank: {0}, {1}".format(rank,hash_tag_list.most_common(10)))
             # language_counter.update(Counter(list(map(rt_language,language_list))))
-            # print("Rank: {0}, {1}".format(rank,language_list.most_common(10)))
-
+            # print("Rank: {0}, {1}".format(rank,language_list.most_common(10))
     comm.Barrier()
-    total_hashtag = comm.gather(hashtag_counter, root=0)
+    total_hashtag = comm.gather(hashtag_counter, root=0) #send to root (rank0) for aggregate output
     comm.Barrier()
-    total_language = comm.gather(language_counter, root=0)
+    total_language = comm.gather(language_counter, root=0) #send to root (rank0) for aggregate output
     comm.Barrier()
 
 # from bs4 import BeautifulSoup
